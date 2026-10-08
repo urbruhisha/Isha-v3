@@ -1,0 +1,378 @@
+/* =========================================
+   ISHA V3 — RESPONSIVE
+    TABLET + MOBILE
+========================================= */
+/* SMALL DESKTOP / IPAD LANDSCAPE */
+
+@media (max-width: 1200px) {
+    :root {
+        --page-padding: clamp(24px, 4vw, 52px);
+    }
+    
+    .hero {
+        grid-template-columns: minmax(0, 1fr0);
+        min-height: auto;
+        gap: 52px;
+        padding: 70px;
+    }
+    
+    .hero-intro {
+        max-width: 760px;
+    }
+    
+    .hero-title {
+        font-size: clamp(6rem, 16vw, 10rem);
+    }
+    
+    .featured-project {
+        width: 100%;
+        max-width: 100%;
+        justify-self: stretch;
+        min-width: 0;
+    }
+    
+    .featured-visual {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+    }
+    
+    .work-header {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+    
+    .work-description {
+        justify-self: start;
+        max-width: 600px;
+    }
+}
+
+/* =========================================
+    IPAD / TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .site-header {
+        grid-template-columns: auto 1fr;
+        gap: 24px;
+        min-height: 76px;
+    }
+
+    .site-nav {
+        display: flex;
+        justify-self: end;
+        gap: clamp(12px, 3vw, 28px);
+    }
+
+    .site-nav a {
+        font-size: 0.68rem;
+    }
+
+    .header-status {
+        display: none;
+    }
+
+    .work-section {
+        padding-top: 80px;
+        padding-bottom: 95px;
+    }
+
+    .work-eyebrow {
+        padding-top: 0;
+    }
+
+    .work-heading h2 {
+        font-size: clamp(3.8rem, 9vw, 6.5rem);
+    }
+
+    .project-large {
+        margin-bottom: 65px;
+    }
+
+    .project-large .project-visual,
+    .project-bada .project-visual-live {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-small .project-visual {
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-grid {
+        gap: 22px;
+    }
+
+    .project-title h3 {
+        overflow-wrap: anywhere;
+    }
+
+    .project-info {
+        gap: 15px;
+    }
+
+    .project-tags {
+        display: none;
+    }
+
+    .more-projects-grid {
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x pan-y;
+    }
+
+    .intro-wordmark {
+        font-size: clamp(6rem, 19vw, 12rem);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    :root {
+        --page-padding: 20px;
+    }
+
+    /* NAVIGATION */
+
+    .site-header {
+        min-height: 68px;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 1.08rem;
+    }
+
+    .site-nav {
+        gap: clamp(10px, 3vw, 18px);
+    }
+
+    .site-nav a {
+        font-size: 0.6rem;
+        letter-spacing: 0.07em;
+    }
+
+    /* HERO */
+
+    .hero {
+        gap: 42px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .hero-title {
+        margin-left: -3px;
+        font-size: clamp(5rem, 25vw, 8rem);
+    }
+
+    .hero-description {
+        margin-top: 25px;
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
+    .hero-description br {
+        display: none;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+
+    .hero-meta {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    /* FEATURED PROJECT */
+
+    .featured-card {
+        padding: 7px;
+        border-radius: 16px;
+    }
+
+    .featured-visual {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+        border-radius: 11px;
+    }
+
+    .featured-info {
+        padding: 16px 10px 12px;
+    }
+
+    .featured-info h2 {
+        font-size: clamp(1.1rem, 5vw, 1.5rem);
+    }
+
+    .featured-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .featured-label,
+    .featured-count {
+        font-size: 0.56rem;
+    }
+
+    /* SELECTED WORK */
+
+    .work-section {
+        padding-top: 60px;
+        padding-bottom: 75px;
+    }
+
+    .work-header {
+        margin-bottom: 35px;
+        padding-bottom: 30px;
+    }
+
+    .work-heading h2 {
+        font-size: clamp(3.4rem, 13vw, 5.5rem);
+    }
+
+    .work-description {
+        font-size: 0.9rem;
+    }
+
+    .project-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 48px;
+    }
+
+    .project-large {
+        margin-bottom: 48px;
+    }
+
+    .project-large .project-visual,
+    .project-bada .project-visual-live,
+    .project-small .project-visual {
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+        border-radius: 15px;
+    }
+
+    .project-info {
+        padding-top: 18px;
+        align-items: center;
+    }
+
+    .project-small .project-info {
+        padding-top: 18px;
+    }
+
+    .project-title h3 {
+        font-size: clamp(1.4rem, 6vw, 2rem);
+    }
+
+    .project-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .project-number {
+        top: 12px;
+        left: 12px;
+    }
+
+    /* CINEMATIC LOADER */
+
+    .intro-top {
+        top: max(18px, env(safe-area-inset-top));
+        font-size: 0.49rem;
+        letter-spacing: 0.08em;
+    }
+
+    .intro-center {
+        width: 100%;
+        padding-inline: 16px;
+    }
+
+    .intro-wordmark {
+        font-size: clamp(4.6rem, 22vw, 9rem);
+    }
+
+    .intro-kicker,
+    .intro-status {
+        font-size: 0.52rem;
+        letter-spacing: 0.1em;
+    }
+
+    .intro-enter {
+        margin-top: 30px;
+        padding: 16px 18px;
+        gap: 18px;
+    }
+
+    .intro-bottom {
+        bottom: 85px;
+    }
+
+    .intro-controls {
+        left: 5%;
+        right: 5%;
+        justify-content: space-between;
+    }
+
+    /* HIDE CUSTOM SCROLL INDICATOR */
+
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    :root {
+        --page-padding: 15px;
+    }
+
+    .site-nav {
+        gap: 10px;
+    }
+
+    .site-nav a {
+        font-size: 0.55rem;
+    }
+
+    .hero-title {
+        font-size: 24vw;
+    }
+
+    .intro-wordmark {
+        font-size: 21vw;
+    }
+}
+
+
+/* =========================================
+   TOUCH DEVICES
+========================================= */
+
+@media (hover: none) {
+
+    .featured-card:hover,
+    .project:not(.project-bada):hover .project-visual {
+        transform: none;
+    }
+}

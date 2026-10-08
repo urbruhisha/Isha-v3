@@ -296,6 +296,7 @@ body.intro-locked {
     to { transform: translateX(102%); }
 }
 
+
 /* =========================================
    RESPONSIVE
 ========================================= */
@@ -347,4 +348,25 @@ body.intro-locked {
 
 .intro-loader.is-revealing {
     background: transparent;
+}
+
+/* DESKTOP EXPERIENCE NOTICE */
+
+.intro-device-note {
+    display: block;
+    margin-bottom: 18px;
+
+    color: #b99bd5;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
+/* Show only on mobile and tablet */
+
+@media (max-width: 1024px) {
+    .intro-device-note {
+        display: block;
+    }
 }
