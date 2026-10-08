@@ -1,0 +1,243 @@
+/* ==================================================
+   NEXA // RIGHT UTILITY MENU
+================================================== */
+.utility-menu {
+    position: absolute;
+
+    right: 24px;
+    top: 62%;
+
+    transform: translateY(-42%);
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 155px;
+
+    padding: 12px 0;
+
+    /* stronger backing */
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 9, 15, 0.18) 0%,
+            rgba(3, 9, 15, 0.72) 45%,
+            rgba(3, 9, 15, 0.9) 100%
+        );
+
+    border-right:
+        2px solid rgba(117, 226, 255, 0.65);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    clip-path: polygon(
+        12px 0,
+        100% 0,
+        100% 100%,
+        12px 100%,
+        0 calc(100% - 12px),
+        0 12px
+    );
+}
+
+
+
+/* ==================================================
+   UTILITY ITEM
+================================================== */
+
+.utility-item {
+    position: relative;
+
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 12px 16px;
+
+    border: none;
+
+    border-bottom:
+        1px solid rgba(177, 226, 238, 0.15);
+
+    background: transparent;
+
+    color: rgba(236, 248, 251, 0.9);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.utility-item:last-of-type {
+    border-bottom: none;
+}
+
+
+/* cyan indicator */
+
+.utility-item::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 2px;
+    height: 12px;
+
+    background: rgba(127, 229, 255, 0.35);
+
+    transition:
+        height 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ==================================================
+   ICON
+================================================== */
+
+.utility-icon {
+    position: relative;
+
+    width: 30px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    color: #bdefff;
+
+    text-shadow:
+        0 0 10px rgba(102, 222, 255, 0.25);
+}
+
+
+/* ==================================================
+   TEXT
+================================================== */
+
+.utility-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.utility-text strong {
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    color: rgba(246, 252, 255, 0.96);
+}
+
+
+.utility-text small {
+    font-size: 8px;
+
+    letter-spacing: 0.14em;
+
+    color: rgba(161, 219, 233, 0.7);
+}
+
+
+/* ==================================================
+   NOTIFICATION
+================================================== */
+
+.notification-dot {
+    position: absolute;
+
+    top: -1px;
+    right: -2px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #8eeaff;
+
+    box-shadow:
+        0 0 8px rgba(108, 227, 255, 0.9);
+}
+
+
+/* ==================================================
+   HOVER
+================================================== */
+
+.utility-item:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(71, 185, 218, 0.03),
+            rgba(71, 185, 218, 0.18)
+        );
+
+    color: #ffffff;
+}
+
+
+.utility-item:hover::after {
+    height: 65%;
+
+    background: #9cecff;
+
+    box-shadow:
+        0 0 10px rgba(104, 222, 255, 0.7);
+}
+
+/* ==================================================
+   DECORATIVE TOP / BOTTOM MARKS
+================================================== */
+
+.utility-menu::before {
+    content: "NEXA // SYSTEM";
+
+    padding: 0 15px 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.2em;
+
+    text-align: right;
+
+    color: rgba(157, 225, 242, 0.65);
+}
+
+
+.utility-menu::after {
+    content: "// SYS.00";
+
+    padding: 8px 15px 0;
+
+    font-size: 6px;
+
+    letter-spacing: 0.2em;
+
+    text-align: right;
+
+    color: rgba(137, 215, 235, 0.4);
+}

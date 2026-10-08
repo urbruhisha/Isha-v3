@@ -1,0 +1,632 @@
+/* ==================================================
+   NEXA // AMBIENT MOVEMENT
+================================================== */
+
+
+/* ==================================================
+   BACKGROUND // IDLE CAMERA
+================================================== */
+/*
+.game-background {
+    transform: scale(1.04);
+    transform-origin: center center;
+
+    animation: worldIdle 14s ease-in-out infinite alternate;
+}
+
+@keyframes worldIdle {
+
+    0% {
+        transform:
+            scale(1.04)
+            translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform:
+            scale(1.055)
+            translate3d(-4px, -2px, 0);
+    }
+
+    100% {
+        transform:
+            scale(1.045)
+            translate3d(3px, -1px, 0);
+    }
+
+}
+
+/* --------------------------------------------------
+   LOAD-IN ANIMATIONS
+-------------------------------------------------- */
+
+.player-profile,
+.operation-panel,
+.event-panel {
+    opacity: 0;
+
+    animation:
+        hudEnterLeft 0.7s ease forwards;
+}
+
+
+.operation-panel {
+    animation-delay: 0.12s;
+}
+
+
+.event-panel {
+    animation-delay: 0.22s;
+}
+
+
+@keyframes hudEnterLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* --------------------------------------------------
+   RIGHT HUD
+-------------------------------------------------- */
+
+.resource-bar,
+.character-identity,
+.utility-menu {
+    opacity: 0;
+
+    animation:
+        hudEnterRight 0.7s ease forwards;
+}
+
+
+.character-identity {
+    animation-delay: 0.12s;
+}
+
+
+.utility-menu {
+    animation-delay: 0.22s;
+}
+
+
+@keyframes hudEnterRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* IMPORTANT:
+   utility-menu already uses translateY,
+   so restore it after animation
+*/
+
+.utility-menu {
+    animation-name: utilityEnter;
+}
+
+
+@keyframes utilityEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(-42%)
+            translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(-42%)
+            translateX(0);
+    }
+
+}
+
+
+/* --------------------------------------------------
+   CENTER LOGO
+-------------------------------------------------- */
+
+.nexa-system-mark {
+    opacity: 0;
+
+    animation:
+        centerHudEnter 0.8s ease 0.25s forwards;
+}
+
+
+@keyframes centerHudEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+}
+
+
+/* --------------------------------------------------
+   BOTTOM NAVIGATION
+-------------------------------------------------- */
+
+.bottom-nav {
+    opacity: 0;
+
+    animation:
+        navEnter 0.75s ease 0.32s forwards;
+}
+
+
+@keyframes navEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* --------------------------------------------------
+   ONLINE STATUS
+-------------------------------------------------- */
+
+.online-dot,
+.notification-dot,
+.nexa-system-status i {
+    animation:
+        statusPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+
+        box-shadow:
+            0 0 4px rgba(108, 227, 255, 0.45);
+    }
+
+    50% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 11px rgba(108, 227, 255, 0.9);
+    }
+
+}
+
+
+/* --------------------------------------------------
+   EVENT ART
+-------------------------------------------------- */
+
+.event-image {
+    animation:
+        eventDrift 12s ease-in-out infinite alternate;
+}
+
+
+@keyframes eventDrift {
+
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1.07);
+    }
+
+}
+
+
+/* --------------------------------------------------
+   ACTIVE NAV LIGHT
+-------------------------------------------------- */
+
+.nav-item.active {
+    position: relative;
+}
+
+
+.nav-item.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: -40%;
+    top: 0;
+
+    width: 30%;
+    height: 100%;
+
+    opacity: 0.35;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(183, 239, 255, 0.25),
+            transparent
+        );
+
+    animation:
+        activeSweep 5s ease-in-out infinite;
+}
+
+
+@keyframes activeSweep {
+
+    0%,
+    70% {
+        left: -40%;
+    }
+
+    100% {
+        left: 120%;
+    }
+
+}
+
+
+/* --------------------------------------------------
+   ACCESSIBILITY
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
+
+/* ==================================================
+   NEXA // BGM CONTROL
+================================================== */
+.bgm-toggle {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 0 12px;
+
+    border: 1px solid rgba(130, 222, 245, 0.25);
+
+    background: rgba(4, 10, 17, 0.62);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    color: rgba(223, 243, 248, 0.8);
+
+    cursor: pointer;
+
+    clip-path: polygon(
+        7px 0,
+        100% 0,
+        100% calc(100% - 7px),
+        calc(100% - 7px) 100%,
+        0 100%,
+        0 7px
+    );
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.bgm-toggle:hover {
+    background: rgba(58, 155, 188, 0.18);
+
+    border-color: rgba(132, 225, 249, 0.65);
+}
+
+
+.bgm-icon {
+    font-size: 15px;
+    color: #8ce8ff;
+}
+
+.bgm-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 1px;
+}
+
+
+.bgm-info strong {
+    font-size: 8px;
+    font-weight: 500;
+
+    letter-spacing: 0.16em;
+}
+
+
+.bgm-info small {
+    font-size: 6px;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(151, 210, 225, 0.6);
+}
+
+
+/* BGM is playing */
+
+.bgm-toggle.playing {
+    border-color: rgba(132, 225, 249, 0.55);
+
+    background: rgba(44, 126, 153, 0.18);
+}
+
+
+.bgm-toggle.playing .bgm-icon {
+    text-shadow:
+        0 0 10px rgba(104, 225, 255, 0.8);
+
+    animation: bgmPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes bgmPulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+/* ==================================================
+   WORLD ATMOSPHERE
+================================================== */
+
+.world-effects {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   MOVING CITY GLOW / FOG
+================================================== */
+
+.ambient-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.12;
+}
+
+
+.glow-one {
+    left: 30%;
+    top: 20%;
+
+    background: rgba(79, 196, 255, 0.6);
+
+    animation:
+        glowMoveOne 12s ease-in-out infinite alternate;
+}
+
+
+.glow-two {
+    right: 15%;
+    bottom: 10%;
+
+    background: rgba(116, 105, 255, 0.45);
+
+    animation:
+        glowMoveTwo 16s ease-in-out infinite alternate;
+}
+
+
+@keyframes glowMoveOne {
+
+    from {
+        transform: translate(-30px, 10px);
+        opacity: 0.07;
+    }
+
+    to {
+        transform: translate(50px, -25px);
+        opacity: 0.15;
+    }
+
+}
+
+
+@keyframes glowMoveTwo {
+
+    from {
+        transform: translate(20px, 30px);
+        opacity: 0.06;
+    }
+
+    to {
+        transform: translate(-60px, -20px);
+        opacity: 0.13;
+    }
+
+}
+
+/* ==================================================
+   FLOATING PARTICLES
+================================================== */
+
+.particle-field {
+    position: absolute;
+    inset: 0;
+}
+
+
+.particle-field span {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: rgba(184, 235, 255, 0.7);
+
+    box-shadow:
+        0 0 8px rgba(130, 222, 255, 0.6);
+
+    opacity: 0;
+
+    animation:
+        particleFloat 9s linear infinite;
+}
+
+
+/* scattered positions */
+
+.particle-field span:nth-child(1) {
+    left: 22%;
+    top: 80%;
+    animation-delay: 0s;
+}
+
+.particle-field span:nth-child(2) {
+    left: 31%;
+    top: 68%;
+    animation-delay: 2s;
+}
+
+.particle-field span:nth-child(3) {
+    left: 43%;
+    top: 76%;
+    animation-delay: 4s;
+}
+
+.particle-field span:nth-child(4) {
+    left: 54%;
+    top: 64%;
+    animation-delay: 1s;
+}
+
+.particle-field span:nth-child(5) {
+    left: 65%;
+    top: 74%;
+    animation-delay: 5s;
+}
+
+.particle-field span:nth-child(6) {
+    left: 73%;
+    top: 58%;
+    animation-delay: 3s;
+}
+
+.particle-field span:nth-child(7) {
+    left: 36%;
+    top: 90%;
+    animation-delay: 6s;
+}
+
+.particle-field span:nth-child(8) {
+    left: 59%;
+    top: 86%;
+    animation-delay: 2.5s;
+}
+
+.particle-field span:nth-child(9) {
+    left: 80%;
+    top: 82%;
+    animation-delay: 7s;
+}
+
+.particle-field span:nth-child(10) {
+    left: 48%;
+    top: 92%;
+    animation-delay: 4.5s;
+}
+
+
+@keyframes particleFloat {
+
+    0% {
+        transform:
+            translate3d(0, 15px, 0)
+            scale(0.6);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.65;
+    }
+
+    80% {
+        opacity: 0.35;
+    }
+
+    100% {
+        transform:
+            translate3d(18px, -140px, 0)
+            scale(1);
+
+        opacity: 0;
+    }
+
+}

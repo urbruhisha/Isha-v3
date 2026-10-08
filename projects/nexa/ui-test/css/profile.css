@@ -1,0 +1,368 @@
+/* ==================================================
+   NEXA // PLAYER PROFILE
+================================================== */
+
+.player-profile {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    z-index: 10;
+
+    padding: 16px 22px 16px 16px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(5, 11, 18, 0.72),
+        rgba(5, 11, 18, 0.38),
+        rgba(5, 11, 18, 0)
+    );
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-left: 2px solid rgba(111, 225, 255, 0.8);
+
+    min-width: 390px;
+}
+
+
+/* ==================================================
+   AVATAR
+================================================== */
+
+.player-avatar {
+    position: relative;
+
+    width: 94px;
+    height: 94px;
+
+    flex-shrink: 0;
+
+    padding: 4px;
+
+    background: rgba(4, 10, 17, 0.8);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.42);
+
+    clip-path: polygon(
+        12px 0,
+        100% 0,
+        100% calc(100% - 12px),
+        calc(100% - 12px) 100%,
+        0 100%,
+        0 12px
+    );
+}
+
+
+/* Inner cyan accent */
+
+.player-avatar::before {
+    content: "";
+
+    position: absolute;
+    inset: 4px;
+
+    border:
+        1px solid rgba(93, 218, 255, 0.65);
+
+    pointer-events: none;
+
+    clip-path: polygon(
+        9px 0,
+        100% 0,
+        100% calc(100% - 9px),
+        calc(100% - 9px) 100%,
+        0 100%,
+        0 9px
+    );
+}
+
+
+.player-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Online indicator */
+
+.online-dot {
+    position: absolute;
+
+    right: 4px;
+    bottom: 5px;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #91f1ff;
+
+    border: 2px solid #07111a;
+
+    box-shadow:
+        0 0 8px rgba(120, 232, 255, 0.85);
+}
+
+
+/* ==================================================
+   PLAYER INFO
+================================================== */
+
+.player-info {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 225px;
+}
+
+
+/* Tiny label */
+
+.player-label {
+    margin-bottom: 3px;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.18em;
+
+    color: rgba(188, 232, 242, 0.78);
+
+    text-transform: uppercase;
+}
+
+
+/* ==================================================
+   PLAYER NAME
+================================================== */
+
+.player-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.player-name {
+    margin: 0;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    line-height: 1;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Tiny profile button */
+
+.edit-profile {
+    width: 24px;
+    height: 24px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(132, 222, 247, 0.35);
+
+    background: rgba(89, 208, 238, 0.08);
+
+    color: rgba(189, 238, 250, 0.9);
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.edit-profile:hover {
+    background: rgba(89, 208, 238, 0.18);
+
+    border-color: rgba(132, 222, 247, 0.75);
+
+    transform: translateY(-1px);
+}
+
+
+/* ==================================================
+   LEVEL
+================================================== */
+
+.player-level {
+    margin-top: 5px;
+
+    font-size: 12px;
+    letter-spacing: 0.14em;
+
+    color: rgba(222, 242, 247, 0.72);
+}
+
+
+.player-level span {
+    color: #9feaff;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   EXP
+================================================== */
+
+.exp-section {
+    margin-top: 10px;
+}
+
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 4px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.13em;
+
+    color: rgba(211, 235, 240, 0.62);
+}
+
+
+.exp-bar {
+    position: relative;
+
+    width: 100%;
+    height: 3px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.14);
+}
+
+
+.exp-progress {
+    width: 56%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(105, 222, 255, 0.9),
+        rgba(197, 247, 255, 1)
+    );
+
+    box-shadow:
+        0 0 8px rgba(114, 226, 255, 0.5);
+}
+
+
+/* ==================================================
+   UID + STATUS
+================================================== */
+
+.player-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 7px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.11em;
+
+    color: rgba(180, 206, 214, 0.56);
+}
+
+
+.player-status {
+    color: rgba(142, 237, 255, 0.75);
+}
+
+
+/* ==================================================
+   DECORATIVE HUD LINE
+================================================== */
+
+.player-info::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -10px;
+
+    width: 65%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(121, 226, 255, 0.7),
+        rgba(121, 226, 255, 0)
+    );
+}
+
+/* ==================================================
+   TEMPORARY PLAYER AVATAR
+================================================== */
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(21, 45, 58, 0.95),
+            rgba(5, 13, 21, 0.95)
+        );
+}
+
+.avatar-symbol {
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1;
+
+    color: rgba(210, 247, 255, 0.95);
+
+    text-shadow:
+        0 0 12px rgba(104, 222, 255, 0.5);
+}
+
+.avatar-id {
+    margin-top: 6px;
+
+    font-size: 6px;
+    letter-spacing: 0.3em;
+
+    color: rgba(140, 225, 245, 0.65);
+}

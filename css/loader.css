@@ -1,0 +1,350 @@
+
+/* =========================================
+   ISHA V3 — CINEMATIC LOADER
+========================================= */
+
+.intro-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #101010;
+    color: #f3f1ec;
+    overflow: hidden;
+    isolation: isolate;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.intro-locked {
+    overflow: hidden;
+}
+
+.intro-loader button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.intro-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50.1%;
+    background: #101010;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.intro-panel-left { left: 0; }
+.intro-panel-right { right: 0; }
+
+.intro-stage {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #101010;
+    overflow: hidden;
+}
+
+.intro-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse, #000 15%, transparent 78%);
+}
+
+.intro-glow {
+    position: absolute;
+    width: min(75vw, 700px);
+    aspect-ratio: 1;
+    background: #d8b4fe;
+    filter: blur(150px);
+    opacity: .09;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.intro-top {
+    position: absolute;
+    top: 35px;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: space-between;
+    color: #99919e;
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+}
+
+.intro-center {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.intro-kicker {
+    color: #d8b4fe;
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .28em;
+    margin-bottom: 24px;
+}
+
+.intro-wordmark {
+    display: flex;
+    align-items: baseline;
+    overflow: hidden;
+    margin: 0;
+    font-size: clamp(6rem, 19vw, 19rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -.095em;
+}
+
+.intro-wordmark span {
+    display: inline-block;
+    transform: translateY(0);
+}
+
+.intro-wordmark .intro-dot {
+    color: #d8b4fe;
+}
+
+.intro-status {
+    margin-top: 20px;
+    color: #99919e;
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+}
+
+.intro-enter {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    margin-top: 48px;
+    padding: 19px 25px;
+    background: #d8b4fe;
+    color: #101010;
+    border: 1px solid #d8b4fe;
+    border-radius: 0;
+    font-size: .7rem !important;
+    font-weight: 900 !important;
+    letter-spacing: .12em;
+    transition: background .25s, transform .25s;
+}
+
+.intro-enter:hover {
+    background: #f3e3ff;
+    transform: translateY(-4px);
+}
+
+.intro-enter:focus-visible,
+.intro-controls button:focus-visible {
+    outline: 2px solid #d8b4fe;
+    outline-offset: 5px;
+}
+
+.intro-bottom {
+    position: absolute;
+    bottom: 70px;
+    left: 5%;
+    right: 5%;
+}
+
+.intro-progress-track {
+    width: 100%;
+    height: 3px;
+    background: #363039;
+    overflow: hidden;
+}
+
+.intro-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #d8b4fe;
+    box-shadow: 0 0 20px #d8b4fe;
+}
+
+.intro-bottom-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 13px;
+    color: #99919e;
+    font-size: .6rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+
+.intro-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+    display: flex;
+    gap: 25px;
+    z-index: 5;
+}
+
+.intro-controls button {
+    background: none;
+    border: 0;
+    color: #b5abbc;
+    font-size: .6rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+.intro-controls button:hover {
+    color: #d8b4fe;
+}
+
+/* =========================================
+   CINEMATIC SEQUENCE
+========================================= */
+
+.intro-loader.is-playing .intro-wordmark span {
+    animation: introLetterSlam .85s cubic-bezier(.16,1,.3,1) both;
+}
+
+.intro-loader.is-playing .intro-wordmark span:nth-child(1) {
+    animation-delay: .05s;
+}
+.intro-loader.is-playing .intro-wordmark span:nth-child(2) {
+    animation-delay: .19s;
+}
+.intro-loader.is-playing .intro-wordmark span:nth-child(3) {
+    animation-delay: .33s;
+}
+.intro-loader.is-playing .intro-wordmark span:nth-child(4) {
+    animation-delay: .47s;
+}
+.intro-loader.is-playing .intro-wordmark span:nth-child(5) {
+    animation-delay: .65s;
+}
+
+@keyframes introLetterSlam {
+    0% {
+        transform: translateY(120%) scale(1.2);
+        opacity: 0;
+        filter: blur(14px);
+    }
+    65% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.intro-loader.is-playing .intro-progress-bar {
+    animation: introProgress 2.6s cubic-bezier(.22,.7,.2,1) forwards;
+}
+
+@keyframes introProgress {
+    0% { width: 0%; }
+    35% { width: 32%; }
+    65% { width: 72%; }
+    100% { width: 100%; }
+}
+
+.intro-loader.is-playing .intro-enter {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-loader.is-playing .intro-grid {
+    animation: introGridPulse .4s steps(2) 4;
+}
+
+@keyframes introGridPulse {
+    50% { opacity: .15; }
+}
+
+/* The entire visible stage disappears first,
+   revealing two panels underneath. */
+
+.intro-loader.is-revealing .intro-stage {
+    opacity: 0;
+    transition: opacity .22s ease;
+}
+
+.intro-loader.is-revealing .intro-panel-left {
+    animation: introCurtainLeft 1.15s cubic-bezier(.76,0,.24,1) .2s forwards;
+}
+
+.intro-loader.is-revealing .intro-panel-right {
+    animation: introCurtainRight 1.15s cubic-bezier(.76,0,.24,1) .2s forwards;
+}
+
+@keyframes introCurtainLeft {
+    to { transform: translateX(-102%); }
+}
+
+@keyframes introCurtainRight {
+    to { transform: translateX(102%); }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+    .intro-top {
+        top: 24px;
+        font-size: .5rem;
+    }
+
+    .intro-wordmark {
+        font-size: clamp(5rem, 23vw, 9rem);
+    }
+
+    .intro-kicker,
+    .intro-status {
+        font-size: .52rem;
+        letter-spacing: .14em;
+    }
+
+    .intro-enter {
+        margin-top: 35px;
+        gap: 22px;
+    }
+
+    .intro-bottom {
+        bottom: 85px;
+    }
+
+    .intro-controls {
+        left: 5%;
+        right: 5%;
+        justify-content: space-between;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro-loader.is-playing .intro-wordmark span,
+    .intro-loader.is-playing .intro-progress-bar,
+    .intro-loader.is-playing .intro-grid,
+    .intro-loader.is-revealing .intro-panel {
+        animation: none !important;
+    }
+
+    .intro-loader.is-revealing .intro-stage {
+        transition: none;
+    }
+}
+
+.intro-loader.is-revealing {
+    background: transparent;
+}

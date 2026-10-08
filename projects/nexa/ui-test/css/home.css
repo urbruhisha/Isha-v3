@@ -1,0 +1,1113 @@
+.game-home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-background {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 55% 48%,
+            rgba(40, 91, 112, 0.18),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #071019 0%,
+            #050b12 45%,
+            #03070c 100%
+        );
+
+    z-index: 0;
+}
+
+.game-home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 7, 13, 0.55) 0%,
+            rgba(3, 7, 13, 0.12) 38%,
+            rgba(3, 7, 13, 0.05) 60%,
+            rgba(3, 7, 13, 0.35) 100%
+        );
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+.game-home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        /* LEFT INWARD SHADOW */
+        linear-gradient(
+            90deg,
+            rgba(2, 6, 11, 0.88) 0%,
+            rgba(2, 6, 11, 0.58) 10%,
+            rgba(2, 6, 11, 0.22) 22%,
+            transparent 38%
+        ),
+
+        /* RIGHT INWARD SHADOW */
+linear-gradient(
+    270deg,
+    rgba(2, 6, 11, 0.96) 0%,
+    rgba(2, 6, 11, 0.86) 10%,
+    rgba(2, 6, 11, 0.62) 20%,
+    rgba(2, 6, 11, 0.30) 31%,
+    rgba(2, 6, 11, 0.10) 40%,
+    transparent 48%
+),
+
+        /* SMALL BOTTOM SHADOW */
+        linear-gradient(
+            0deg,
+            rgba(2, 6, 11, 0.48) 0%,
+            transparent 22%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.game-home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+    pointer-events: none;
+
+    opacity: 0.12;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.025) 0px,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+}
+
+.edge-data {
+    position: absolute;
+    z-index: 8;
+
+    font-size: 8px;
+    letter-spacing: 0.22em;
+
+    color: rgba(148, 218, 236, 0.35);
+
+    writing-mode: vertical-rl;
+}
+
+.edge-data-left {
+    left: 8px;
+    top: 28%;
+}
+
+.edge-data-right {
+    right: 8px;
+    top: 24%;
+}
+
+/* ==================================================
+   NEXA // CENTER SYSTEM MARK
+================================================== */
+
+.nexa-system-mark {
+    position: absolute;
+
+    top: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    pointer-events: none;
+}
+
+
+/* NEXA // 零 */
+
+.nexa-system-name {
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: 0.2em;
+
+    color: rgba(239, 250, 253, 0.88);
+
+    text-shadow:
+        0 0 12px rgba(107, 220, 250, 0.15);
+}
+
+.nexa-system-name span {
+    margin-left: 4px;
+
+    font-size: 11px;
+
+    color: rgba(117, 222, 249, 0.85);
+}
+
+
+/* SYSTEM ONLINE */
+
+.nexa-system-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 4px;
+
+    font-size: 6px;
+
+    letter-spacing: 0.2em;
+
+    color: rgba(169, 211, 222, 0.5);
+}
+
+
+/* online dot */
+
+.nexa-system-status i {
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #8ceaff;
+
+    box-shadow:
+        0 0 6px rgba(108, 226, 255, 0.8);
+}
+
+
+/* ==================================================
+   DECORATIVE LINE
+================================================== */
+
+.nexa-system-line {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 6px;
+}
+
+.nexa-system-line span {
+    width: 27px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(132, 222, 245, 0.45)
+        );
+}
+
+.nexa-system-line span:last-child {
+    transform: scaleX(-1);
+}
+
+.nexa-system-line b {
+    font-size: 7px;
+    font-weight: 400;
+
+    color: rgba(139, 226, 248, 0.65);
+}
+
+/* ========================================
+   NEXA CITY NETWORK MAP
+======================================== */
+
+.city-map {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+/* ----------------------------------------
+   SUBTLE MAP GRID
+---------------------------------------- */
+
+.city-map::before {
+    content: "";
+    position: absolute;
+
+    width: 850px;
+    height: 650px;
+
+    left: 50%;
+    top: 52%;
+
+    transform:
+        translate(-50%, -50%)
+        perspective(700px)
+        rotateX(58deg)
+        rotateZ(-8deg);
+
+    background-image:
+        linear-gradient(
+            rgba(117, 211, 232, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(117, 211, 232, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black 10%,
+            rgba(0, 0, 0, 0.7) 45%,
+            transparent 75%
+        );
+
+    opacity: 0.65;
+}
+
+
+/* ----------------------------------------
+   MAP HEADER
+---------------------------------------- */
+
+.map-header {
+    position: absolute;
+
+    top: 24%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: rgba(163, 219, 232, 0.55);
+}
+
+.map-header::before,
+.map-header::after {
+    content: "";
+
+    width: 70px;
+    height: 1px;
+
+    background: rgba(128, 213, 233, 0.2);
+}
+
+.map-header small {
+    color: rgba(128, 213, 233, 0.3);
+    font-size: 7px;
+}
+
+
+/* ----------------------------------------
+   COORDINATES
+---------------------------------------- */
+
+.map-coordinates {
+    position: absolute;
+
+    left: 34%;
+    top: 34%;
+
+    font-size: 7px;
+    line-height: 1.8;
+    letter-spacing: 1.5px;
+
+    color: rgba(124, 183, 198, 0.25);
+}
+
+
+/* ----------------------------------------
+   CITY BLOCKS
+---------------------------------------- */
+
+.city-grid {
+    position: absolute;
+
+    width: 760px;
+    height: 470px;
+
+    left: 50%;
+    top: 52%;
+
+    transform: translate(-50%, -50%) rotate(-7deg) scale(1.08);
+}
+/* ========================================
+   CITY ROAD NETWORK
+======================================== */
+
+.city-grid::before {
+    content: "";
+
+    position: absolute;
+
+    width: 820px;
+    height: 1px;
+
+    left: -35px;
+    top: 205px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(127, 210, 229, 0.08) 8%,
+            rgba(127, 210, 229, 0.18) 35%,
+            rgba(127, 210, 229, 0.18) 65%,
+            rgba(127, 210, 229, 0.08) 92%,
+            transparent
+        );
+
+    box-shadow:
+        0 5px 0 rgba(127, 210, 229, 0.035);
+}
+
+
+.city-grid::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 560px;
+
+    left: 380px;
+    top: -45px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(127, 210, 229, 0.08) 10%,
+            rgba(127, 210, 229, 0.18) 35%,
+            rgba(127, 210, 229, 0.18) 65%,
+            rgba(127, 210, 229, 0.08) 90%,
+            transparent
+        );
+
+    box-shadow:
+        5px 0 0 rgba(127, 210, 229, 0.035);
+}
+/* ----------------------------------------
+   CITY DISTRICTS / BUILDING CLUSTERS
+---------------------------------------- */
+
+.city-block {
+    position: absolute;
+
+    border: 1px solid rgba(120, 205, 224, 0.15);
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 18px,
+            rgba(116, 202, 221, 0.055) 19px,
+            rgba(116, 202, 221, 0.055) 20px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 15px,
+            rgba(116, 202, 221, 0.045) 16px,
+            rgba(116, 202, 221, 0.045) 17px
+        ),
+        rgba(25, 67, 80, 0.025);
+
+    box-shadow:
+        inset 0 0 18px rgba(80, 180, 205, 0.025);
+}
+
+
+/* inner building footprint */
+
+.city-block::before {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border:
+        1px solid rgba(127, 208, 226, 0.09);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 47%,
+            rgba(126, 207, 226, 0.08) 48%,
+            rgba(126, 207, 226, 0.08) 51%,
+            transparent 52%
+        ),
+        linear-gradient(
+            transparent 45%,
+            rgba(126, 207, 226, 0.07) 46%,
+            rgba(126, 207, 226, 0.07) 49%,
+            transparent 50%
+        );
+}
+
+
+/* tiny structure marker */
+
+.city-block::after {
+    content: "";
+
+    position: absolute;
+
+    width: 13px;
+    height: 9px;
+
+    right: 7px;
+    bottom: 7px;
+
+    border:
+        1px solid rgba(131, 218, 237, 0.11);
+
+    background:
+        rgba(91, 185, 207, 0.025);
+}
+
+/* individual buildings / districts */
+
+.block-01 {
+    width: 110px;
+    height: 70px;
+    left: 35px;
+    top: 65px;
+}
+
+.block-02 {
+    width: 80px;
+    height: 105px;
+    left: 165px;
+    top: 25px;
+}
+
+.block-03 {
+    width: 135px;
+    height: 65px;
+    left: 270px;
+    top: 50px;
+}
+
+.block-04 {
+    width: 95px;
+    height: 95px;
+    left: 435px;
+    top: 30px;
+}
+
+.block-05 {
+    width: 75px;
+    height: 135px;
+    left: 550px;
+    top: 75px;
+}
+
+.block-06 {
+    width: 125px;
+    height: 85px;
+    left: 15px;
+    top: 165px;
+}
+
+.block-07 {
+    width: 90px;
+    height: 75px;
+    left: 170px;
+    top: 165px;
+}
+
+.block-08 {
+    width: 145px;
+    height: 100px;
+    left: 290px;
+    top: 150px;
+}
+
+.block-09 {
+    width: 85px;
+    height: 65px;
+    left: 465px;
+    top: 165px;
+}
+
+.block-10 {
+    width: 125px;
+    height: 80px;
+    left: 60px;
+    top: 285px;
+}
+
+.block-11 {
+    width: 145px;
+    height: 75px;
+    left: 235px;
+    top: 285px;
+}
+
+.block-12 {
+    width: 130px;
+    height: 95px;
+    left: 430px;
+    top: 275px;
+}
+
+
+/* little internal building lines */
+
+.city-block::before {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border: 1px solid rgba(127, 208, 226, 0.09);
+}
+
+/* ========================================
+   DISTRICT VARIATION
+======================================== */
+
+/* dense residential blocks */
+
+.block-01,
+.block-06,
+.block-10 {
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 13px,
+            rgba(121, 205, 224, 0.065) 14px 15px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 20px,
+            rgba(121, 205, 224, 0.045) 21px 22px
+        ),
+        rgba(35, 88, 103, 0.025);
+}
+
+
+/* larger commercial structures */
+
+.block-03,
+.block-08,
+.block-11 {
+    background:
+        linear-gradient(
+            90deg,
+            transparent 30%,
+            rgba(116, 203, 222, 0.06) 31%,
+            rgba(116, 203, 222, 0.06) 33%,
+            transparent 34%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 68%,
+            rgba(116, 203, 222, 0.05) 69%,
+            rgba(116, 203, 222, 0.05) 71%,
+            transparent 72%
+        ),
+        linear-gradient(
+            0deg,
+            transparent 52%,
+            rgba(116, 203, 222, 0.07) 53%,
+            rgba(116, 203, 222, 0.07) 55%,
+            transparent 56%
+        ),
+        rgba(32, 80, 94, 0.025);
+}
+
+
+/* sparse utility / industrial */
+
+.block-04,
+.block-05,
+.block-09 {
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 28px,
+            rgba(118, 205, 224, 0.055) 29px 30px
+        ),
+        rgba(25, 65, 78, 0.02);
+}
+
+
+/* smaller mixed districts */
+
+.block-02,
+.block-07,
+.block-12 {
+    background:
+        linear-gradient(
+            45deg,
+            transparent 47%,
+            rgba(119, 207, 226, 0.045) 48%,
+            rgba(119, 207, 226, 0.045) 50%,
+            transparent 51%
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 17px,
+            rgba(119, 207, 226, 0.05) 18px 19px
+        ),
+        rgba(30, 74, 88, 0.02);
+}
+
+
+/* ----------------------------------------
+   NEXA CORE
+---------------------------------------- */
+
+.map-core {
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    left: 52%;
+    top: 51%;
+
+    transform: translate(-50%, -50%);
+}
+
+.core-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.ring-outer {
+    width: 145px;
+    height: 145px;
+
+    border: 1px dashed rgba(131, 220, 240, 0.16);
+}
+
+.ring-inner {
+    width: 88px;
+    height: 88px;
+
+    border: 1px solid rgba(131, 220, 240, 0.2);
+}
+
+.core-symbol {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(145, 227, 246, 0.5);
+
+    background: rgba(8, 24, 32, 0.85);
+
+    color: rgba(211, 245, 252, 0.9);
+
+    font-size: 24px;
+
+    box-shadow:
+        0 0 30px rgba(94, 203, 228, 0.08);
+}
+
+.core-label {
+    position: absolute;
+
+    left: 105px;
+    top: 75px;
+
+    width: 100px;
+
+    color: rgba(176, 226, 238, 0.65);
+
+    font-size: 7px;
+    letter-spacing: 1.5px;
+}
+
+.core-label small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: rgba(132, 182, 194, 0.35);
+
+    font-size: 6px;
+}
+
+
+/* ----------------------------------------
+   MAP NODES
+---------------------------------------- */
+
+/* operation route */
+
+.operation-node .node-label::after {
+    content: "";
+
+    position: absolute;
+
+    width: 175px;
+    height: 1px;
+
+    left: 5px;
+    top: -17px;
+
+    transform:
+        rotate(-24deg);
+
+    transform-origin: left center;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(142, 227, 246, 0.35) 0 5px,
+            transparent 5px 10px
+        );
+
+    opacity: 0.65;
+}
+
+.map-node {
+    position: absolute;
+
+    color: rgba(150, 205, 217, 0.45);
+
+    font-size: 6px;
+    letter-spacing: 1px;
+}
+
+.node-point {
+    display: block;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #8bdff2;
+
+    box-shadow:
+        0 0 8px rgba(107, 218, 242, 0.5);
+}
+
+.node-02 {
+    left: 39%;
+    top: 43%;
+}
+
+.node-04 {
+    left: 62%;
+    top: 38%;
+}
+
+.node-08 {
+    left: 64%;
+    top: 61%;
+}
+
+.map-node small {
+    display: block;
+
+    margin-top: 7px;
+
+    white-space: nowrap;
+
+    font-size: 6px;
+}
+
+
+/* ----------------------------------------
+   ACTIVE OPERATION NODE
+---------------------------------------- */
+
+.operation-node {
+    left: 43%;
+    top: 62%;
+}
+
+.operation-node .node-point {
+    width: 9px;
+    height: 9px;
+}
+
+.node-pulse {
+    position: absolute;
+
+    width: 32px;
+    height: 32px;
+
+    left: -12px;
+    top: -12px;
+
+    border:
+        1px solid rgba(116, 220, 242, 0.3);
+
+    border-radius: 50%;
+
+    animation:
+        mapNodePulse 2.8s ease-out infinite;
+}
+
+.node-label {
+    position: absolute;
+
+    left: 20px;
+    top: -5px;
+
+    width: 130px;
+
+    white-space: nowrap;
+}
+
+.node-label strong {
+    display: block;
+
+    color: rgba(190, 235, 245, 0.75);
+
+    font-size: 7px;
+    letter-spacing: 1.5px;
+}
+
+.node-label small {
+    margin-top: 4px;
+
+    color: rgba(125, 182, 195, 0.4);
+}
+
+.operation-node::before,
+.operation-node::after {
+    content: "";
+
+    position: absolute;
+
+    background:
+        rgba(132, 222, 242, 0.25);
+}
+
+.operation-node::before {
+    width: 42px;
+    height: 1px;
+
+    left: -17px;
+    top: 4px;
+}
+
+.operation-node::after {
+    width: 1px;
+    height: 42px;
+
+    left: 4px;
+    top: -17px;
+}
+
+/* ----------------------------------------
+   RESTRICTED SECTOR
+---------------------------------------- */
+
+.sector-boundary {
+    position: absolute;
+
+    width: 230px;
+    height: 145px;
+
+    left: 38%;
+    top: 53%;
+
+border:
+    1px dashed rgba(122, 210, 230, 0.22);
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(79, 171, 193, 0.025),
+        transparent 70%
+    );
+
+    transform: rotate(-7deg);
+}
+
+.sector-boundary span {
+    position: absolute;
+
+    left: 8px;
+    bottom: 7px;
+
+    color: rgba(125, 192, 207, 0.25);
+
+    font-size: 6px;
+    letter-spacing: 1.3px;
+}
+
+.sector-boundary::before {
+    content: "";
+
+    position: absolute;
+
+    width: 470px;
+    height: 1px;
+
+    left: -70px;
+    top: -45px;
+
+    transform:
+        rotate(-28deg);
+
+    transform-origin: left center;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(128, 218, 238, 0.16) 0,
+            rgba(128, 218, 238, 0.16) 4px,
+            transparent 4px,
+            transparent 9px
+        );
+
+    opacity: 0.7;
+}
+/* ----------------------------------------
+   SCANNER
+---------------------------------------- */
+
+.map-scan {
+    position: absolute;
+
+    width: 540px;
+    height: 1px;
+
+    left: 50%;
+    top: 32%;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(124, 224, 245, 0.35),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px rgba(90, 210, 235, 0.15);
+
+    animation:
+        mapScan 7s ease-in-out infinite;
+}
+
+
+/* ----------------------------------------
+   SYSTEM DATA
+---------------------------------------- */
+
+.map-system-data {
+    position: absolute;
+
+    left: 50%;
+    top: 72%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 22px;
+
+    color: rgba(123, 174, 187, 0.25);
+
+    font-size: 6px;
+    letter-spacing: 1.4px;
+}
+
+
+/* ----------------------------------------
+   ANIMATIONS
+---------------------------------------- */
+
+@keyframes mapNodePulse {
+
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes mapScan {
+
+    0%,
+    100% {
+        top: 34%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    50% {
+        top: 68%;
+        opacity: 0.45;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+}

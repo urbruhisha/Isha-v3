@@ -1,0 +1,571 @@
+/* ==================================================
+   NEXA // EVENT
+================================================== */
+
+.event-panel {
+    position: absolute;
+    top: 445px;
+    left: 30px;
+
+    width: 310px;
+
+    z-index: 10;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.event-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 7px;
+
+    font-size: 9px;
+    letter-spacing: 0.18em;
+
+    color: rgba(224, 243, 248, 0.78);
+}
+
+.event-header::before {
+    content: "";
+
+    width: 18px;
+    height: 1px;
+
+    background: rgba(120, 228, 255, 0.8);
+}
+
+.event-header small {
+    font-size: 7px;
+
+    color: rgba(143, 213, 230, 0.55);
+}
+
+
+/* ==================================================
+   EVENT CARD
+================================================== */
+
+.event-card {
+    position: relative;
+
+    width: 100%;
+    height: 155px;
+
+    overflow: hidden;
+
+    background: #050a10;
+
+    border:
+        1px solid rgba(188, 231, 242, 0.22);
+
+    border-left:
+        2px solid rgba(111, 225, 255, 0.65);
+
+    clip-path: polygon(
+        10px 0,
+        100% 0,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        0 100%,
+        0 10px
+    );
+}
+
+
+/* ==================================================
+   IMAGE
+================================================== */
+/*
+.event-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* darkens left side for text */
+
+.event-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(6, 10, 16, 0.48) 0%,
+            rgba(6, 10, 16, 0.16) 48%,
+            transparent 78%
+        );
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   EVENT TEXT
+================================================== */
+
+.event-info {
+    position: absolute;
+
+    left: 15px;
+    bottom: 15px;
+
+    z-index: 2;
+}
+
+.event-type {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 6px;
+    letter-spacing: 0.17em;
+
+    color: rgba(119, 227, 253, 0.82);
+}
+
+.event-info h3 {
+    margin: 0;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+
+    color: #ffffff;
+}
+
+.event-info p {
+    margin: 2px 0 0;
+
+    font-size: 9px;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(229, 239, 243, 0.75);
+}
+
+.event-date {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 7px;
+    letter-spacing: 0.08em;
+
+    color: rgba(199, 220, 226, 0.6);
+}
+
+
+/* ==================================================
+   OPEN BUTTON
+================================================== */
+
+.event-button {
+    position: absolute;
+
+    right: 12px;
+    bottom: 12px;
+
+    z-index: 3;
+
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(144, 225, 245, 0.45);
+
+    background:
+        rgba(4, 13, 21, 0.62);
+
+    color: #c8f4ff;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.event-button:hover {
+    background:
+        rgba(76, 186, 218, 0.28);
+
+    border-color:
+        rgba(151, 233, 253, 0.9);
+}
+
+
+/* ==================================================
+   IMAGE HOVER
+================================================== */
+
+.event-card:hover .event-image {
+    transform: scale(1.035);
+
+    filter: brightness(1.08);
+}
+
+
+/* ==================================================
+   EVENT DOTS
+================================================== */
+
+.event-dots {
+    display: flex;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 8px;
+}
+
+.event-dot {
+    width: 6px;
+    height: 6px;
+
+    padding: 0;
+
+    border:
+        1px solid rgba(190, 220, 228, 0.45);
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.event-dot.active {
+    background: #8ce8ff;
+
+    border-color: #8ce8ff;
+
+    box-shadow:
+        0 0 7px rgba(112, 226, 255, 0.65);
+}
+
+/* ========================================
+   CODE: BLOOM — CUSTOM EVENT ART
+======================================== */
+
+.bloom-art {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 78% 40%,
+            rgba(194, 161, 224, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 62% 110%,
+            rgba(92, 167, 196, 0.11),
+            transparent 42%
+        ),
+        linear-gradient(
+            125deg,
+            #10131c 0%,
+            #171421 50%,
+            #0a1118 100%
+        );
+}
+
+
+/* ----------------------------------------
+   GIANT BACKGROUND TYPE
+---------------------------------------- */
+
+.bloom-background-type {
+    position: absolute;
+
+    right: -22px;
+    bottom: -9px;
+
+    font-size: 53px;
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    color: rgba(220, 204, 232, 0.045);
+
+    line-height: 1;
+
+    transform: rotate(-4deg);
+
+    white-space: nowrap;
+}
+
+
+/* ----------------------------------------
+   MOON / ECLIPSE
+---------------------------------------- */
+
+.bloom-moon {
+    position: absolute;
+
+    width: 82px;
+    height: 82px;
+
+    right: 25px;
+    top: 21px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 38% 35%,
+            rgba(240, 225, 244, 0.92),
+            rgba(195, 175, 213, 0.75) 38%,
+            rgba(118, 104, 143, 0.35) 72%,
+            rgba(65, 56, 80, 0.12) 100%
+        );
+
+    box-shadow:
+        0 0 22px rgba(189, 157, 215, 0.13),
+        0 0 50px rgba(144, 118, 179, 0.08);
+}
+
+
+/* shadow over moon */
+
+.bloom-moon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 78px;
+    height: 78px;
+
+    border-radius: 50%;
+
+    left: -22px;
+    top: -12px;
+
+    background: #11141c;
+
+    opacity: 0.92;
+}
+
+
+/* little technical ring */
+
+.bloom-moon-ring {
+    position: absolute;
+
+    width: 98px;
+    height: 98px;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed rgba(214, 191, 228, 0.15);
+
+    animation:
+        bloomRingRotate 24s linear infinite;
+}
+
+
+.bloom-moon span {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 12px;
+
+    color: rgba(245, 233, 248, 0.7);
+}
+
+
+/* ----------------------------------------
+   SAKURA PETALS
+---------------------------------------- */
+
+.petal {
+    position: absolute;
+
+    width: 8px;
+    height: 5px;
+
+    border-radius:
+        70% 30% 70% 30%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(229, 196, 225, 0.75),
+            rgba(176, 143, 190, 0.3)
+        );
+
+    box-shadow:
+        0 0 6px rgba(215, 176, 211, 0.12);
+}
+
+
+.petal-01 {
+    right: 115px;
+    top: 25px;
+    transform: rotate(32deg);
+}
+
+.petal-02 {
+    right: 88px;
+    top: 48px;
+    transform: rotate(-18deg) scale(0.7);
+}
+
+.petal-03 {
+    right: 128px;
+    top: 72px;
+    transform: rotate(68deg) scale(0.85);
+}
+
+.petal-04 {
+    right: 45px;
+    top: 112px;
+    transform: rotate(20deg) scale(0.6);
+}
+
+.petal-05 {
+    right: 155px;
+    top: 110px;
+    transform: rotate(-42deg) scale(0.75);
+}
+
+.petal-06 {
+    right: 18px;
+    top: 70px;
+    transform: rotate(74deg) scale(0.55);
+}
+
+.petal-07 {
+    right: 105px;
+    top: 132px;
+    transform: rotate(-12deg) scale(0.5);
+}
+
+
+/* ----------------------------------------
+   EVENT SYSTEM DETAILS
+---------------------------------------- */
+
+.bloom-code {
+    position: absolute;
+
+    right: 12px;
+    top: 9px;
+
+    font-size: 5px;
+
+    letter-spacing: 1.4px;
+
+    color: rgba(214, 198, 225, 0.32);
+}
+
+
+.bloom-side-text {
+    position: absolute;
+
+    right: 6px;
+    bottom: 12px;
+
+    writing-mode: vertical-rl;
+
+    font-size: 5px;
+
+    letter-spacing: 1.6px;
+
+    color: rgba(189, 175, 202, 0.18);
+}
+
+
+/* ----------------------------------------
+   EXTRA DECORATIVE LINES
+---------------------------------------- */
+
+.bloom-art::before {
+    content: "";
+
+    position: absolute;
+
+    width: 115px;
+    height: 1px;
+
+    right: 20px;
+    bottom: 27px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(208, 184, 219, 0.18)
+        );
+}
+
+
+.bloom-art::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 55px;
+
+    right: 45px;
+    bottom: 13px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(208, 184, 219, 0.12)
+        );
+}
+
+
+/* ----------------------------------------
+   MOTION
+---------------------------------------- */
+
+@keyframes bloomRingRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .bloom-moon-ring {
+        animation: none;
+    }
+
+}

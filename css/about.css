@@ -1,0 +1,371 @@
+
+/* =========================================
+   ISHA V3 — ABOUT ME
+========================================= */
+
+.about-section {
+    padding: 110px var(--page-padding) 65px;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* TOP LABELS */
+
+.about-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.about-topline span:first-child {
+    color: var(--accent);
+}
+
+.about-topline span:last-child {
+    color: var(--muted);
+}
+
+/* HEADING */
+
+.about-heading {
+    margin-top: 95px;
+    margin-bottom: 70px;
+}
+
+.about-eyebrow {
+    margin-bottom: 25px;
+
+    color: var(--accent);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+}
+
+.about-heading h2 {
+    margin: 0;
+
+    font-size: clamp(3.5rem, 8vw, 9rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.075em;
+}
+
+.about-heading h2 span {
+    color: #898989;
+}
+
+/* MAIN CONTENT */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(50px, 8vw, 150px);
+
+    align-items: start;
+}
+
+/* INTRODUCTION */
+
+.about-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about-description {
+    max-width: 560px;
+    margin: 0;
+
+    color: #bdbdbb;
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    line-height: 1.9;
+}
+
+/* PERSONALITY CARD */
+
+.about-personality {
+    position: relative;
+
+    padding: 32px;
+    overflow: hidden;
+
+    background: #1b1b1b;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-medium);
+
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.about-personality:hover {
+    border-color: rgba(216, 180, 254, 0.45);
+    transform: translateY(-4px);
+}
+
+.personality-label {
+    display: block;
+    margin-bottom: 25px;
+
+    color: var(--accent);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+}
+
+.about-personality p {
+    max-width: 350px;
+    margin: 0;
+
+    color: var(--text);
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.personality-square {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+
+    width: 10px;
+    height: 10px;
+
+    background: var(--accent);
+}
+
+/* INFORMATION GRID */
+
+.about-right {
+    min-width: 0;
+}
+
+.about-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    border-top: 1px solid var(--border);
+}
+
+.about-info-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 135px;
+    padding: 24px 20px 24px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.about-info-item:nth-child(even) {
+    padding-left: 24px;
+    border-left: 1px solid var(--border);
+}
+
+.about-info-item > span {
+    color: var(--muted);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.about-info-item strong {
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+/* AVAILABILITY */
+
+.availability {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.availability i {
+    display: inline-block;
+    flex-shrink: 0;
+
+    width: 7px;
+    height: 7px;
+
+    background: #8bdaa6;
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px rgba(139, 218, 166, 0.4);
+}
+
+/* RESUME LINK */
+
+.about-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+
+    width: fit-content;
+    margin-top: 36px;
+    padding-bottom: 8px;
+
+    color: var(--text);
+    border-bottom: 1px solid var(--accent);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+}
+
+.about-resume span {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.about-resume:hover {
+    color: var(--accent);
+    gap: 24px;
+}
+
+/* BOTTOM DETAILS */
+
+.about-bottomline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 65px;
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+}
+
+.about-bottom-square {
+    width: 9px;
+    height: 9px;
+    background: var(--accent);
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .about-section {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+
+    .about-heading {
+        margin-top: 65px;
+        margin-bottom: 55px;
+    }
+
+    .about-heading h2 {
+        font-size: clamp(3.5rem, 9vw, 6rem);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .about-left {
+        gap: 30px;
+    }
+
+    .about-description {
+        max-width: 650px;
+    }
+
+    .about-personality {
+        max-width: 650px;
+    }
+
+    .about-bottomline {
+        margin-top: 80px;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .about-section {
+        padding-top: 65px;
+        padding-bottom: 70px;
+    }
+
+    .about-heading {
+        margin-top: 55px;
+        margin-bottom: 45px;
+    }
+
+    .about-heading h2 {
+        font-size: clamp(2.8rem, 11vw, 4.5rem);
+        line-height: 1;
+    }
+
+    .about-content {
+        gap: 45px;
+    }
+
+    .about-personality {
+        padding: 25px;
+    }
+
+    .about-info-item {
+        min-height: 115px;
+        padding-right: 12px;
+    }
+
+    .about-info-item:nth-child(even) {
+        padding-left: 15px;
+    }
+
+    .about-info-item strong {
+        font-size: 0.65rem;
+    }
+
+    .about-bottomline {
+        margin-top: 65px;
+        gap: 20px;
+        line-height: 1.8;
+    }
+
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-personality,
+    .about-resume {
+        transition: none;
+    }
+
+}

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ISHA — Front-End Developer and Designer portfolio."
+    >
+
+    <title>ISHA — Portfolio</title>
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/work.css">
+<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/loader.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     ISHA V3 — CINEMATIC LOADER
+========================================= -->
+
+<div class="intro-loader" id="introLoader" role="dialog"
+     aria-label="Portfolio introduction" aria-modal="true">
+
+    <div class="intro-panel intro-panel-left"></div>
+    <div class="intro-panel intro-panel-right"></div>
+
+    <div class="intro-stage">
+
+        <div class="intro-grid"></div>
+        <div class="intro-glow"></div>
+
+        <div class="intro-top">
+            <span>ISHA® — PORTFOLIO V3</span>
+            <span>EST. 2026</span>
+        </div>
+
+        <div class="intro-center">
+
+            <p class="intro-kicker">WELCOME TO MY WORLD</p>
+
+            <h1 class="intro-wordmark" aria-label="ISHA">
+                <span>I</span>
+                <span>S</span>
+                <span>H</span>
+                <span>A</span>
+                <span class="intro-dot">.</span>
+            </h1>
+
+            <p class="intro-status" id="introStatus">
+                AN EXPERIENCE IN DESIGN &amp; CODE
+            </p>
+
+            <button class="intro-enter" id="introEnter" type="button">
+                ENTER EXPERIENCE
+                <span>↗</span>
+            </button>
+
+        </div>
+
+        <div class="intro-bottom">
+
+            <div class="intro-progress-track">
+                <div class="intro-progress-bar"></div>
+            </div>
+
+            <div class="intro-bottom-info">
+                <span id="introProgressLabel">AWAITING INPUT</span>
+                <span id="introPercent">00%</span>
+            </div>
+
+        </div>
+
+        <div class="intro-controls">
+            <button id="introSound" type="button"
+                    aria-pressed="true">SOUND ON</button>
+            <button id="introSkip" type="button">SKIP INTRO ↗</button>
+        </div>
+
+    </div>
+</div>
+
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <header class="site-header">
+
+        <a href="#" class="logo">
+            ISHA<span>.</span>
+        </a>
+
+
+        <nav class="site-nav" aria-label="Main navigation">
+
+            <a href="#work">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+
+        </nav>
+
+
+        <div class="header-status">
+
+            <span class="status-dot"></span>
+
+            AVAILABLE FOR WORK
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="hero">
+
+<div class="hero-background" aria-hidden="true">
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+    <span class="hero-bg-text">
+        ISHA
+    </span>
+
+    <div class="hero-square square-one"></div>
+    <div class="hero-square square-two"></div>
+    <div class="hero-square square-three"></div>
+
+</div>
+
+            <!-- LEFT SIDE -->
+
+            <div class="hero-intro">
+
+                <p class="hero-eyebrow">
+                    FRONT-END DEVELOPER &amp; DESIGNER
+                </p>
+
+
+                <h1 class="hero-title">
+                    ISHA<span>.</span>
+                </h1>
+
+
+                <p class="hero-description">
+                I design &amp; build digital experiences<br>
+                with personality.
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#work"
+                        class="button button-primary"
+                    >
+                        VIEW MY WORK
+                        <span>↗</span>
+                    </a>
+
+
+                    <a
+                        href="#contact"
+                        class="button button-secondary"
+                    >
+                        CONTACT ME
+                    </a>
+
+                </div>
+
+<div class="hero-meta">
+
+    <div>
+        <span>BASED IN</span>
+        <p>VIRGINIA, USA</p>
+    </div>
+
+    <div>
+        <span>FOCUS</span>
+        <p>FRONT-END / UI</p>
+    </div>
+
+</div>
+
+            </div>
+
+            <!-- =========================================
+                 FEATURED PROJECT
+            ========================================== -->
+
+            <div class="featured-project">
+
+                <div class="featured-top">
+
+                    <div class="featured-label">
+
+                        <span class="featured-dot"></span>
+
+                        LIVE PROJECT PREVIEW
+
+                    </div>
+
+
+                    <span class="featured-count">
+                        01 / 06
+                    </span>
+
+                </div>
+
+
+
+<a
+    href="https://urbruhisha.github.io/genshin-ui/"
+    class="featured-card"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+
+                    <!-- IMAGE WILL GO HERE LATER -->
+
+<div class="featured-visual">
+    
+    <iframe
+        src="https://urbruhisha.github.io/genshin-ui/"
+        title="Genshin Archive live preview"
+        class="featured-site-preview"
+        loading="lazy"
+        tabindex="-1"
+    ></iframe>
+
+</div>
+
+
+                    <div class="featured-info">
+
+                        <div>
+
+                            <p class="featured-type">
+                                PERSONAL PROJECT
+                            </p>
+
+                            <h2>
+                                GENSHIN ARCHIVE
+                            </h2>
+
+                        </div>
+
+
+                        <span class="featured-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+<div class="hero-scroll">
+    <span>SCROLL TO EXPLORE</span>
+    <span>↓</span>
+</div>
+
+
+
+        <!-- =========================================
+             TICKER
+        ========================================== -->
+
+        <section
+            class="ticker"
+            aria-label="Portfolio specialties"
+        >
+
+            <div class="ticker-track">
+
+
+                <!-- FIRST COPY -->
+
+                <div class="ticker-content">
+
+                    <span>DESIGN</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>CODE</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>CREATE</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>FRONT-END DEVELOPMENT</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>UI DESIGN</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>INTERACTIVE EXPERIENCES</span>
+                    <span class="ticker-symbol">✦</span>
+
+                </div>
+
+
+
+                <!-- DUPLICATE FOR SEAMLESS LOOP -->
+
+                <div
+                    class="ticker-content"
+                    aria-hidden="true"
+                >
+
+                    <span>DESIGN</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>CODE</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>CREATE</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>FRONT-END DEVELOPMENT</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>UI DESIGN</span>
+                    <span class="ticker-symbol">✦</span>
+
+                    <span>INTERACTIVE EXPERIENCES</span>
+                    <span class="ticker-symbol">✦</span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+<!-- =========================================
+     SELECTED WORK
+========================================== -->
+
+<div class="work-header">
+
+    <div class="work-heading">
+
+        <p class="work-eyebrow">
+            SELECTED WORK
+        </p>
+
+        <h2>
+            Things I've<br>
+            <span>made.</span>
+        </h2>
+
+    </div>
+
+
+    <p class="work-description">
+        A mix of web design, front-end development,
+        and interactive projects built with a focus
+        on personality and experience.
+    </p>
+
+</div>
+
+    <!-- =========================================
+     PROJECT 01 — BADA LEE
+========================================== -->
+
+<article class="project project-large project-bada">
+
+<div class="project-visual project-visual-live">
+
+    <iframe
+        src="https://urbruhisha.github.io/bdlee/"
+        title="BADA LEE live website preview"
+        class="project-site-preview"
+        loading="lazy"
+    ></iframe>
+
+    <span class="project-number">01</span>
+
+</div>
+
+
+    <div class="project-info">
+
+        <div class="project-title">
+
+            <span>WEB DESIGN / FRONT-END</span>
+
+            <h3>BADA LEE</h3>
+
+        </div>
+
+
+        <div class="project-meta">
+
+            <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JAVASCRIPT</span>
+            </div>
+
+            <a
+                href="https://urbruhisha.github.io/bdlee/"
+                class="project-arrow"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open BADA LEE project"
+            >
+                ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- =========================================
+     PROJECTS 02 + 03
+========================================== -->
+
+<div class="project-grid">
+
+
+<!-- PROJECT 02 — REWIND -->
+
+<article class="project project-small project-rewind">
+
+    <div class="project-visual project-visual-live">
+
+        <iframe
+            src="https://urbruhisha.github.io/rewind/"
+            title="REWIND! live website preview"
+            class="project-site-preview"
+            loading="lazy"
+        ></iframe>
+
+        <span class="project-number">02</span>
+
+    </div>
+
+
+    <div class="project-info">
+
+        <div class="project-title">
+
+            <span>INTERACTIVE WEB</span>
+
+            <h3>REWIND!</h3>
+
+        </div>
+
+
+        <a
+            href="https://urbruhisha.github.io/rewind/"
+            class="project-arrow"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open REWIND project"
+        >
+            ↗
+        </a>
+
+    </div>
+
+</article>
+
+
+<!-- PROJECT 03 — PATRICIA URQUIOLA -->
+
+<article class="project project-small project-urquiola">
+
+    <div class="project-visual project-visual-live">
+
+<iframe
+    src="https://urbruhisha.github.io/urquiola/"
+    title="Patricia Urquiola live website preview"
+    class="project-site-preview"
+    loading="lazy"
+></iframe>
+        
+        <span class="project-number">03</span>
+
+    </div>
+
+
+    <div class="project-info">
+
+        <div class="project-title">
+
+            <span>WEB DESIGN / EDITORIAL</span>
+
+            <h3>PATRICIA URQUIOLA</h3>
+
+        </div>
+
+
+<a
+    href="https://urbruhisha.github.io/urquiola/"
+    class="project-arrow"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open Patricia Urquiola project"
+>
+    ↗
+</a>
+
+    </div>
+
+</article>
+    
+    
+</div>
+
+
+<!-- =========================================
+     MORE TO EXPLORE
+========================================== -->
+
+<div class="more-projects">
+
+    <div class="more-projects-header">
+        <p class="work-eyebrow">MORE TO EXPLORE / 04—09</p>
+        <h2>A little more of what I do.</h2>
+        <p class="more-scroll-hint">
+        SCROLL TO EXPLORE <span>→</span>
+        </p>
+    </div>
+
+    <div class="more-projects-grid">
+
+        <!-- 04 — NEKO BREW -->
+        <a href="projects/neko-brew/index.html" class="more-project-card" target="_blank" rel="noopener noreferrer">
+            <div class="more-project-image">
+                <img src="images/neko-brew-preview.png"
+                     alt="Neko Brew website screenshot"
+                     loading="lazy">
+                <span class="more-project-overlay">VIEW PROJECT ↗</span>
+            </div>
+            <div class="more-project-info">
+                <h3>NEKO BREW</h3>
+                <span>WEB DESIGN</span>
+            </div>
+        </a>
+
+        <!-- 05 — WOODBLOCK -->
+        <a href="projects/woodblock/index.html" class="more-project-card" target="_blank" rel="noopener noreferrer">
+            <div class="more-project-image">
+                <img src="images/woodblock-preview.png"
+                     alt="Woodblock project screenshot"
+                     loading="lazy">
+                <span class="more-project-overlay">VIEW PROJECT ↗</span>
+            </div>
+            <div class="more-project-info">
+                <h3>WOODBLOCK</h3>
+                <span>WEB / EDITORIAL</span>
+            </div>
+        </a>
+
+        <!-- 06 — NEXA -->
+        <a href="projects/nexa/index.html" class="more-project-card" target="_blank" rel="noopener noreferrer">
+            <div class="more-project-image">
+                <img src="images/nexa-preview.png"
+                     alt="NEXA project screenshot"
+                     loading="lazy">
+                <span class="more-project-overlay">VIEW PROJECT ↗</span>
+            </div>
+            <div class="more-project-info">
+                <h3>NEXA</h3>
+                <span>DESIGN PROJECT</span>
+            </div>
+        </a>
+
+        <!-- 07 — KISSESAMOUR -->
+        <a href="projects/kissesamour/index.html" class="more-project-card" target="_blank" rel="noopener noreferrer">
+            <div class="more-project-image">
+                <img src="images/kissesamour-preview.png"
+                     alt="Kissesamour project screenshot"
+                     loading="lazy">
+                <span class="more-project-overlay">VIEW PROJECT ↗</span>
+            </div>
+            <div class="more-project-info">
+                <h3>KISSESAMOUR</h3>
+                <span>WORK IN PROGRESS</span>
+            </div>
+        </a>
+
+        <!-- 08 — COMING SOON -->
+        <div class="more-project-card coming-soon">
+            <div class="more-project-image">
+                <div class="coming-soon-content">
+                    <span>IN THE WORKS / 08</span>
+                    <h3>COMING SOON</h3>
+                    <p>NEW PROJECT</p>
+                </div>
+            </div>
+            <div class="more-project-info">
+                <h3>UNTITLED PROJECT</h3>
+                <span>COMING SOON</span>
+            </div>
+        </div>
+
+        <!-- 09 — SPARE SLOT -->
+        <div class="more-project-card coming-soon">
+            <div class="more-project-image">
+                <div class="coming-soon-content">
+                    <span>FUTURE PROJECT / 09</span>
+                    <h3>COMING SOON</h3>
+                    <p>STAY TUNED</p>
+                </div>
+            </div>
+            <div class="more-project-info">
+                <h3>FUTURE PROJECT</h3>
+                <span>COMING SOON</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ========================================
+     ABOUT ME
+========================================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about-topline">
+        <span>ABOUT</span>
+        <span>02</span>
+    </div>
+
+    <div class="about-heading">
+        <p class="about-eyebrow">A LITTLE INTRODUCTION / ISHA</p>
+
+        <h2>
+            Hi, I'm ISHA<br>
+            <span>Nice to meet you.</span>
+        </h2>
+    </div>
+
+    <div class="about-content">
+
+        <!-- LEFT: INTRODUCTION -->
+        <div class="about-left">
+
+            <p class="about-description">
+                — a graphic designer and front-end
+                developer who enjoys bringing creative ideas
+                to life through code. I love combining strong
+                visuals with interactive details to make
+                websites that feel memorable and personal.
+            </p>
+
+            <div class="about-personality">
+                <span class="personality-label">
+                    BEYOND THE SCREEN
+                </span>
+
+                <p>
+                    Music on repeat. Games after hours.
+                    Always experimenting with something new.
+                </p>
+
+                <span class="personality-square"></span>
+            </div>
+
+        </div>
+
+        <!-- RIGHT: INFORMATION -->
+        <div class="about-right">
+
+            <div class="about-info-grid">
+
+                <div class="about-info-item">
+                    <span>BASED IN</span>
+                    <strong>VIRGINIA, USA</strong>
+                </div>
+
+                <div class="about-info-item">
+                    <span>FOCUS</span>
+                    <strong>FRONT-END + UI</strong>
+                </div>
+
+                <div class="about-info-item">
+                    <span>TOOLS</span>
+                    <strong>HTML / CSS / JS / FIGMA</strong>
+                </div>
+
+                <div class="about-info-item">
+                    <span>CURRENTLY</span>
+                    <strong class="availability">
+                        <i></i>
+                        OPEN TO OPPORTUNITIES
+                    </strong>
+                </div>
+
+            </div>
+
+            <a
+                href="resume.pdf"
+                class="about-resume"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                VIEW MY RESUME
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="about-bottomline">
+        <span>
+            DESIGNING, CODING &amp; PROBABLY LISTENING TO MUSIC
+        </span>
+        <span class="about-bottom-square"></span>
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT
+========================================== -->
+
+<section class="contact-section" id="contact">
+    
+    <!-- CONTACT BACKGROUND -->
+<div class="hero-background" aria-hidden="true">
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+    <span class="hero-square square-one"></span>
+    <span class="hero-square square-two"></span>
+    <span class="hero-square square-three"></span>
+
+</div>
+
+    <!-- TOP LABEL -->
+
+    <div class="contact-label">
+        <span>CONTACT</span>
+        <span>03</span>
+    </div>
+
+
+    <!-- MAIN CONTACT -->
+
+    <div class="contact-main">
+
+        <div class="contact-heading">
+
+            <p class="contact-eyebrow">
+                GOT SOMETHING IN MIND?
+            </p>
+
+            <h2>
+                HAVE AN IDEA?<br>
+                LET'S MAKE<br>
+                <span>SOMETHING.</span>
+            </h2>
+
+        </div>
+
+
+        <!-- SAY HELLO -->
+
+        <div class="contact-action">
+
+            <p>
+                SAY HELLO
+            </p>
+
+<a
+    href="mailto:ferminaisha003@gmail.com?subject=Hello%20Isha!"
+    class="email-link"
+>
+    LET'S TALK
+    <span>↗</span>
+</a>
+
+            <p class="contact-note">
+                Whether it's a project, opportunity,
+                or just a hello — my inbox is open.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-brand">
+
+            <a href="https://urbruhisha.github.io/Isha-v2/" class="footer-logo">
+                ISHA<span>.</span>
+            </a>
+
+            <p>
+                DESIGNER &amp; FRONT-END DEVELOPER
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a
+                href="https://github.com/urbruhisha"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GITHUB
+                <span>↗</span>
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/aisha-fermin-2b5055415/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LINKEDIN
+                <span>↗</span>
+            </a>
+            
+            <a
+                href="
+https://www.instagram.com/designedbyishav2?stkn=MzZva2c1ajdhcDd4&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                INSTAGRAM
+                <span>↗</span>
+            </a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ISHA
+            </p>
+
+            <p class="footer-made">
+                DESIGNED &amp; BUILT BY ISHA
+            </p>
+
+            <a href="#" class="back-to-top">
+                BACK TO TOP
+                <span>↑</span>
+            </a>
+
+        </div>
+
+    </footer>
+
+</section>
+
+
+    </main>
+
+<!-- CUSTOM SCROLL INDICATOR -->
+<div class="scroll-indicator" aria-hidden="true"></div>
+
+<script src="js/script.js"></script>
+<script src="js/hover-sounds.js" defer></script>
+<script src="js/loader.js" defer></script>
+    
+</body>
+
+</html>

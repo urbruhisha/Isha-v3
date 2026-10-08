@@ -1,0 +1,1193 @@
+/* ==================================================
+   ISHA V3
+   BASE + NAV + HERO + FEATURED PROJECT + TICKER
+================================================== */
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #101010;
+    color: #f3f1ec;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* ==================================================
+   VARIABLES
+================================================== */
+
+:root {
+    --background: #101010;
+    --surface: #181818;
+    --surface-light: #202020;
+
+    --text: #f3f1ec;
+    --muted: #8d8d88;
+
+    --border: #30302e;
+
+    --accent: #d8b4fe;
+    --accent-soft: #b99bd5;
+
+    --radius-small: 10px;
+    --radius-medium: 18px;
+    --radius-large: 26px;
+
+    --page-padding: clamp(24px, 5vw, 80px);
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.site-header {
+    width: 100%;
+    min-height: 86px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    padding:
+        0
+        var(--page-padding);
+
+    border-bottom: 1px solid var(--border);
+
+    background: var(--background);
+}
+
+
+/* LOGO */
+
+.logo {
+    width: max-content;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+
+/* NAV */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+
+.site-nav a {
+    position: relative;
+
+    padding: 10px 0;
+
+    color: var(--muted);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+
+    transition:
+        color 0.2s ease;
+}
+
+.site-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 4px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition:
+        width 0.25s ease;
+}
+
+.site-nav a:hover {
+    color: var(--text);
+}
+
+.site-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* STATUS */
+
+.header-status {
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--muted);
+
+    font-size: 0.67rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    background: #8dd39e;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px rgba(141, 211, 158, 0.45);
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    min-height: calc(100vh - 86px);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(480px, 0.8fr)
+        minmax(650px, 1.2fr);
+
+    align-items: center;
+
+    gap: clamp(40px, 4vw, 75px);
+
+    padding:
+        45px
+        var(--page-padding)
+        45px;
+}
+
+/* ==================================================
+   HERO BACKGROUND SHENANIGANS
+================================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+
+/* keep actual hero content above background */
+
+.hero-intro,
+.featured-project {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* BACKGROUND LAYER */
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   FAINT GRID
+================================================== */
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 48px 48px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 2%,
+            black 25%,
+            black 75%,
+            transparent 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 2%,
+            black 25%,
+            black 75%,
+            transparent 100%
+        );
+}
+
+
+/* ==================================================
+   SOFT GLOWS
+================================================== */
+
+.hero-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.1;
+}
+
+
+.hero-glow-one {
+    width: 450px;
+    height: 450px;
+
+    left: -180px;
+    top: 25%;
+
+    background: var(--accent);
+}
+
+
+.hero-glow-two {
+    width: 500px;
+    height: 500px;
+
+    right: 5%;
+    top: -250px;
+
+    background: var(--accent);
+
+    opacity: 0.055;
+}
+
+
+/* ==================================================
+   GIANT BACKGROUND ISHA
+================================================== */
+
+.hero-bg-text {
+    position: absolute;
+
+    left: 50%;
+    bottom: -0.22em;
+
+    transform: translateX(-50%);
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255, 255, 255, 0.035);
+
+    font-size: clamp(15rem, 31vw, 36rem);
+    font-weight: 900;
+
+    line-height: 0.7;
+    letter-spacing: -0.1em;
+
+    white-space: nowrap;
+
+    user-select: none;
+}
+
+
+/* ==================================================
+   LITTLE SQUARE DETAILS
+================================================== */
+
+.hero-square {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--accent);
+
+    opacity: 0.5;
+}
+
+
+.square-one {
+    left: 42%;
+    top: 19%;
+}
+
+
+.square-two {
+    left: 48%;
+    bottom: 18%;
+
+    width: 4px;
+    height: 4px;
+
+    opacity: 0.25;
+}
+
+
+.square-three {
+    right: 3%;
+    top: 43%;
+
+    width: 5px;
+    height: 5px;
+
+    opacity: 0.3;
+}
+/* ==================================================
+   LIVE WEBSITE PREVIEW
+================================================== */
+
+.featured-visual {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    border-radius:
+        calc(var(--radius-large) - 8px);
+
+    background: #181818;
+}
+
+.featured-site-preview {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+
+    pointer-events: none;
+}
+/* ==================================================
+   HERO — LEFT
+================================================== */
+
+.hero-intro {
+    max-width: 590px;
+}
+
+
+/* EYEBROW */
+
+.hero-eyebrow {
+    margin-bottom: 22px;
+
+    color: var(--accent);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.17em;
+}
+
+
+.hero-title {
+    margin-left: -8px;
+
+    font-size:
+        clamp(7rem, 12vw, 12rem);
+
+    font-weight: 900;
+
+    letter-spacing: -0.09em;
+    line-height: 0.75;
+}
+
+.hero-title span {
+    color: var(--accent);
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+    max-width: 460px;
+
+    margin-top: 38px;
+
+    color: #c4c3be;
+
+    font-size: clamp(1.15rem, 1.5vw, 1.4rem);
+
+    line-height: 1.45;
+
+    letter-spacing: -0.025em;
+}
+
+.hero-meta {
+    display: flex;
+    gap: 45px;
+
+    margin-top: 30px;
+}
+
+.hero-meta div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.hero-meta span {
+    color: #555550;
+
+    font-size: 0.52rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.hero-meta p {
+    color: var(--muted);
+
+    font-size: 0.6rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+.hero {
+    position: relative;
+}
+
+.hero-scroll {
+    position: absolute;
+
+    left: 50%;
+    bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    transform: translateX(-50%);
+
+    color: #5d5d58;
+
+    font-size: 0.52rem;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+}
+
+.hero-scroll span:last-child {
+    color: var(--accent);
+}
+
+/* ==================================================
+   HERO BUTTONS
+================================================== */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 34px;
+}
+
+.button {
+    min-height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    padding:
+        0
+        20px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* PRIMARY */
+
+.button-primary {
+    background: var(--text);
+    color: var(--background);
+
+    border-color: var(--text);
+}
+
+.button-primary:hover {
+    transform: translateY(-3px);
+
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+
+/* SECONDARY */
+
+.button-secondary {
+    color: var(--muted);
+
+    background: transparent;
+}
+
+.button-secondary:hover {
+    transform: translateY(-3px);
+
+    color: var(--text);
+
+    border-color: #62625e;
+}
+
+
+/* ==================================================
+   FEATURED PROJECT
+================================================== */
+.featured-project {
+    width: 100%;
+    max-width: 880px;
+
+    justify-self: end;
+}
+
+
+/* FEATURED HEADER */
+
+.featured-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+}
+
+.featured-label {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--muted);
+
+    font-size: 0.67rem;
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+}
+
+.featured-dot {
+    width: 6px;
+    height: 6px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+}
+
+.featured-count {
+    color: #64645f;
+
+    font-size: 0.67rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* ==================================================
+   FEATURED CARD
+================================================== */
+
+.featured-card {
+    position: relative;
+
+    display: block;
+
+    padding: 10px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #4a4947;
+
+    box-shadow:
+        0 28px 70px
+        rgba(0, 0, 0, 0.28);
+}
+
+
+/* ==================================================
+   FEATURED VISUAL PLACEHOLDER
+================================================== */
+
+.featured-visual {
+    position: relative;
+
+    min-height: clamp(300px, 31vw, 450px);
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+
+    border-radius:
+        calc(var(--radius-large) - 8px);
+
+    background:
+        radial-gradient(
+            circle at 25% 20%,
+            rgba(216, 180, 254, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 255, 255, 0.05),
+            transparent 30%
+        ),
+        #202020;
+}
+
+/* subtle grid */
+
+.featured-visual::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        35px 35px;
+
+    pointer-events: none;
+}
+
+
+/* PLACEHOLDER TEXT */
+
+.featured-visual > span {
+    position: relative;
+
+    z-index: 1;
+
+    color: #5e5d59;
+
+    font-size: 0.63rem;
+    font-weight: 700;
+
+    letter-spacing: 0.17em;
+}
+
+
+/* ==================================================
+   FEATURED INFO
+================================================== */
+
+.featured-info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        24px
+        18px
+        16px;
+}
+
+.featured-type {
+    margin-bottom: 8px;
+
+    color: var(--muted);
+
+    font-size: 0.6rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.featured-info h2 {
+    font-size:
+        clamp(1.3rem, 2.1vw, 2rem);
+
+    font-weight: 800;
+
+    letter-spacing: -0.045em;
+}
+
+
+/* ARROW */
+
+.featured-arrow {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    color: var(--muted);
+
+    font-size: 1.15rem;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.featured-card:hover .featured-arrow {
+    transform:
+        rotate(45deg);
+
+    background: var(--accent);
+
+    color: #111;
+
+    border-color: var(--accent);
+}
+
+
+/* ==================================================
+   TICKER
+================================================== */
+
+.ticker {
+    width: 100%;
+
+    overflow: hidden;
+
+    padding:
+        16px 0;
+
+    background: var(--accent);
+    color: #111;
+
+    white-space: nowrap;
+}
+
+.ticker-track {
+    width: max-content;
+
+    display: flex;
+
+    animation:
+        ticker-scroll
+        28s
+        linear
+        infinite;
+}
+
+.ticker-content {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 28px;
+
+    padding-right: 28px;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+.ticker-symbol {
+    font-size: 0.8rem;
+}
+
+
+/* ANIMATION */
+
+@keyframes ticker-scroll {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* pause when hovering */
+
+.ticker:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+
+/* ==================================================
+   EMPTY SECTIONS
+   TEMPORARY
+================================================== */
+
+#work,
+#about,
+#contact {
+    min-height: 0;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1000px) {
+
+    .site-header {
+        grid-template-columns:
+            1fr auto;
+    }
+
+    .site-nav {
+        display: none;
+    }
+
+
+    .hero {
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+
+    .hero-intro {
+        max-width: 650px;
+    }
+
+
+    .hero-title {
+        font-size:
+            clamp(6rem, 18vw, 9rem);
+    }
+
+
+    .featured-project {
+        max-width: none;
+
+        justify-self: stretch;
+    }
+
+
+    .featured-visual {
+        min-height: 480px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    :root {
+        --page-padding: 18px;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+        min-height: 72px;
+    }
+
+
+    .header-status {
+        font-size: 0.56rem;
+
+        letter-spacing: 0.08em;
+    }
+
+
+    .status-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        gap: 60px;
+
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+
+    .hero-eyebrow {
+        margin-bottom: 18px;
+
+        font-size: 0.59rem;
+    }
+
+
+    .hero-title {
+        margin-left: -3px;
+
+        font-size:
+            clamp(5rem, 28vw, 7rem);
+    }
+
+
+    .hero-description {
+        margin-top: 32px;
+
+        font-size: 1.05rem;
+    }
+
+
+    /* BUTTONS */
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+
+    .button {
+        width: 100%;
+    }
+
+
+    /* FEATURED */
+
+    .featured-visual {
+        min-height: 300px;
+    }
+
+
+    .featured-info {
+        padding:
+            20px
+            12px
+            12px;
+    }
+
+
+    .featured-info h2 {
+        font-size: 1.25rem;
+    }
+
+
+    .featured-arrow {
+        width: 39px;
+        height: 39px;
+    }
+
+
+    /* TICKER */
+
+    .ticker {
+        padding: 14px 0;
+    }
+
+
+    .ticker-content {
+        gap: 22px;
+
+        padding-right: 22px;
+
+        font-size: 0.62rem;
+    }
+
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .ticker-track {
+        animation: none;
+    }
+
+    .featured-card,
+    .button,
+    .featured-arrow {
+        transition: none;
+    }
+
+}
+/* ==================================================
+   HIDE NATIVE SCROLLBAR
+================================================== */
+
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #151515;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+
+    /* square instead of pill */
+    border-radius: 0;
+
+    /* tiny dark separation from track */
+    border: 2px solid #151515;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e4c8ff;
+}
+
+/* ==================================================
+   SQUARE SCROLL INDICATOR
+================================================== */
+
+.scroll-indicator {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 12px;
+    height: 12px;
+
+    background: var(--accent);
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    transform: translateY(0);
+}
